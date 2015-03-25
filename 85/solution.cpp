@@ -15,6 +15,8 @@ class solution{
             }
             int maxSize = 0;
             for(int i=0; i<rlen; i++){
+
+                // from left to right to update left[]
                 int curren_col = 0;
                 for(int j=0; j<clen; j++){
                     if(matrix[i][j] == '0'){
@@ -27,6 +29,7 @@ class solution{
                     }
                 }
 
+                // from right to left to update right[]
                 curren_col = clen+1;
                 for(int j=clen-1; j>=0; j--){
                     if(matrix[i][j] == '0'){
@@ -39,6 +42,7 @@ class solution{
                     }
                 }
 
+                // from left to right update height[] and maxSize
                 for(int j=0; j< clen; j++){
                     if(matrix[i][j] == '0')
                         height[j] = 0;

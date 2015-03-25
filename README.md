@@ -1,5 +1,3 @@
-<img src="http://latex.codecogs.com/gif.latex?1+sin(x)" border="0"/>
-
 - **Binary Tree Postorder Traversal (145)**
 	- 要求不用递归实现后序遍历
 	- 后序是left-right-root，那么首先用修正的前序root-right-left，然后reverse一下，变成left-right-root就行了，代码如下：
