@@ -1,4 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 - **Binary Tree Postorder Traversal (145)**
 	- 要求不用递归实现后序遍历
