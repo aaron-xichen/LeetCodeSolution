@@ -16,4 +16,8 @@
 	- 维护好了这些信息，那么每个单元格的面积就是
 $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 	- 值得注意的是，在更新left和right的时候，得查看上一迭代的时候height的值，如果是0，那么本层不受约束，如果是1，那么考虑到上下直接的连通，left的值不能小于旧的left值，right的值不能大于旧的right值
-	- 因此最后实现过程中的更新顺序是，对于每一层，先从左往右扫描一次更新left，然后从右往左扫描一次更新right，最后再从左往右扫描一次，更新height和area
+
+- **Regular Expression Matching(10)**
+	- 这题难度比较大，就是普通的正则表达式匹配问题，即`*`和`.`，前者表示`*`前面的字符出现任意次，后者可以替代任何字符。
+	- 用动态规划的思路做，设一个二维矩阵b[m+1][n+1]，其中m是string串的长度，n是pattern串的长度，然后b[i+1][j+1]代表的意义就是s[1..i]和p[1..j]是否能匹配上
+	- 有了上述的约定，首先置b[0][0]=true，然后再初始化第一行和第一第二列，接着利用递推关系进行求解。详细的递推请参考这儿[猛戳我](http://xiaohuiliucuriosity.blogspot.com/2014/12/regular-expression-matching.html)
