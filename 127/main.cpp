@@ -1,4 +1,4 @@
-#include "./solution2.cpp"
+#include "./solution3.cpp"
 int main(){
     unordered_set<string> dict;
     dict.insert("hot");
@@ -7,7 +7,7 @@ int main(){
     dict.insert("lot");
     dict.insert("log");
     solution sl = solution();
-    int len = sl.ladderLength("hit", "cog", dict);
+    int len = sl.ladderLength("hot", "dog", dict);
     cout<<len<<endl;
     // cout<<sl.isAdjacent("hot","log");
 }
