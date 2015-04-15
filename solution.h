@@ -4,6 +4,7 @@
 #include<queue>
 #include<unordered_set>
 #include<map>
+#include<stdlib.h>
 using namespace std;
 struct TreeNode{
     int val;
@@ -11,12 +12,20 @@ struct TreeNode{
     TreeNode *right;
     TreeNode(int x):val(x), left(NULL), right(NULL){}
 };
+
 struct TreeLinkNode{
     int val;
     TreeLinkNode *left, *right, *next;
     TreeLinkNode(int x):val(x), left(NULL), right(NULL), next(NULL){}
 
 };
+
+struct ListNode{
+    int val;
+    ListNode *next;
+    ListNode(int x): val(x), next(NULL){}
+};
+
 class utils{
     public:
         void print(vector<vector<int> > data){
