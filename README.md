@@ -110,3 +110,9 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 - **Min Stack(155)**
 	- 这题要求实现一个栈，但是和普通的栈相比多了一个操作，返回当前栈中的最小元素。一开始想到的办法是维护两个栈，一个存数据`stack_data`，一个存当前的最小值`stack_min`，每`push()`一个新的值`x`，把`min(x, stack_min.top())`重新压入`stack_min`，每次`pop()`的话两个栈同步进行弹栈。这样做固然可以，但是17个测例的成绩是80ms，非常慢。
 	- 后来仔细一想，其实没必要每来一个新元素就同步压栈，而是发现`x`**不比当前**`stack_min.top()`的值大的时候再压入`stack_min`，即`x<=stack_min.top()`。这样就能保证`stack_min`中的值是**不增**的，并且元素个数比以前的方法也小了很多，最后的成绩是66ms
+
+- **Roman to Integer(13)**
+	- 这题是12题的姊妹题，要求给定一个罗马数字字符串，转换为相应的十进制数字。思路并不难，设置变量`previous_value`, `current_value`和`total`。从左往右扫描
+		- 如果`current_value <= previous_value`，那么直接`total+=current_value`
+		- 否则，`total+=current_value - 2*previous_value`即可。
+	- $O(n)$的复杂度
