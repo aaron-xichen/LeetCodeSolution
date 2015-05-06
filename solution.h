@@ -5,6 +5,7 @@
 #include<unordered_set>
 #include<map>
 #include<stdlib.h>
+#include<limits>
 using namespace std;
 struct TreeNode{
     int val;
@@ -26,6 +27,13 @@ struct ListNode{
     ListNode(int x): val(x), next(NULL){}
 };
 
+struct Interval{
+    int start;
+    int end;
+    Interval(): start(0), end(0){}
+    Interval(int s, int e): start(s), end(e){}
+};
+
 class utils{
     public:
         void print(vector<vector<int> > data){
@@ -38,3 +46,4 @@ class utils{
             }
         }
 };
+
