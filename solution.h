@@ -35,6 +35,12 @@ struct Interval{
     Interval(int s, int e): start(s), end(e){}
 };
 
+struct UndirectedGraphNode {
+    int label;
+    vector<UndirectedGraphNode *> neighbors;
+    UndirectedGraphNode(int x) : label(x) {};
+};
+
 class utils{
     public:
         void print(vector<vector<int> > data){
@@ -47,4 +53,3 @@ class utils{
             }
         }
 };
-
