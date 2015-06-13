@@ -198,3 +198,6 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 - **Maximum Gap(164)**
 	- 给定一个无序的数组，要求找出按序拍好后的**最大间隔**
 	- 有个非常重要的观察就是倘若数组的最小最大元素为`min`和`max`，数组长度为`len`，那么最大间隔至少为$bucketSize=\lceil (max-min) / (len-1) \rceil$，这样就可以按bucketSize的大小将元素划分若干bucket，个数为$bucketNum=\lceil (max-min)/bucketSize\rceil$。接着将所有元素映射到相应的桶内，存储每个桶内的最大值和最小值，然后扫描一遍所有桶，找出桶与桶之间的最大值即可。
+
+- **Largest Number(179)**
+	- 给定若干的数字，求如何组合这些数字使得生成的新的字符串数字数值最大。其实稍微抽象后知道就是个排序问题，比较$a_1a_2...a_mb_1b_2...b_n$和$b_1b_2...b_na_1a_2...a_m$即可
