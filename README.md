@@ -213,3 +213,7 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 	- 这题是典型的面试题，给定一个无序整型数组，可能包含重复元素，要求找出所有和为0的三元数组，不能有重复。解法有两种：
 	- 第一种是$O(n^2lgn)$，主要就是遍历i和j，求出$object = -(nums[i] + nums[j])$，然后用二分查找在剩余的元素中找，如果找到则true，否则就false
 	- 第二种是$O(n^2)$的方法，固定一个元素`num[i]`，然后在剩余的元素中分别从头和尾向中间靠拢，使得和为`-num[i]`即可
+
+- **Maximum Product Subarray(152)**
+	- 这题是最大子数组和问题的衍生版本，只是将“和”换成了“乘积”， 最迅速的求解方式不变，都是想方设法扫描一次，存下**核心信息**， $O(n)$的复杂度
+	- 核心的更新代码是`maxhere = max(max(max_pre*ele, min_pre*ele), ele)`和`minhere=min(min(max_pre*ele, min_pre*ele), ele)`。看似简单其实内涵大量的tricks。
