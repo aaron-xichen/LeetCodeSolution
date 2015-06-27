@@ -217,3 +217,7 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 - **Maximum Product Subarray(152)**
 	- 这题是最大子数组和问题的衍生版本，只是将“和”换成了“乘积”， 最迅速的求解方式不变，都是想方设法扫描一次，存下**核心信息**， $O(n)$的复杂度
 	- 核心的更新代码是`maxhere = max(max(max_pre*ele, min_pre*ele), ele)`和`minhere=min(min(max_pre*ele, min_pre*ele), ele)`。看似简单其实内涵大量的tricks。
+
+- **Longest Substring Without repeating characters(3)**
+	- 这题是给定字符串，然后返回最长的没有重复的子串。核心是用数组实现HashMap，用以记录是否出现，并且记录最近出现一次的下标值，初始值皆为`-1`
+	- 有了这个信息，每遍历一个字符`c`，只需要查看是否在HashMap里面，如果出现了，那么取出最近出现的下标`idx=idxs[(int)c]`，更新起始下标`idx_begin=max(idx+1, idx_begin)`，注意这里能够处理`-1`的特殊情况。然后更新`max_length = max(max_legnth, i-idx_begin+1)`
