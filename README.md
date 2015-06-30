@@ -221,3 +221,10 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 - **Longest Substring Without repeating characters(3)**
 	- 这题是给定字符串，然后返回最长的没有重复的子串。核心是用数组实现HashMap，用以记录是否出现，并且记录最近出现一次的下标值，初始值皆为`-1`
 	- 有了这个信息，每遍历一个字符`c`，只需要查看是否在HashMap里面，如果出现了，那么取出最近出现的下标`idx=idxs[(int)c]`，更新起始下标`idx_begin=max(idx+1, idx_begin)`，注意这里能够处理`-1`的特殊情况。然后更新`max_length = max(max_legnth, i-idx_begin+1)`
+
+- **Search in Rotated Sort Array I(33)**
+	- 给定一个排好序的数组，但是从某个地方进行了对称旋转，如`[0,1,2,3,4,5]`绕`2`和`3`之间的空隙旋转为了`[3,4,5,0,1,2]`。然后问指定的元素`target`是否在数组中，另外没有重复元素。
+	- 主要的思路就是二分查找，考虑`nums[mid]>nums[left]`决定是出于单调增的哪一边，然后常规做即可，最坏情况复杂度为$O(lgn)$
+
+- **Search in Rotated Sort Array I(81)**
+	- 放松约束允许出现重复元素，此时问题变得棘手，因为沿用I里面的判断的话可能出现`nums[mid]==nums[left]`的情况，这个时候索性就`left++`，但是这样最坏情况的复杂度就变成了$O(n)$了
