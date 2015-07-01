@@ -1,4 +1,4 @@
-#include "./solution2.cpp"
+#include "./solution3.cpp"
 int main(){
     TreeNode* root = new TreeNode(1);
     TreeNode* l2 = new TreeNode(2);
