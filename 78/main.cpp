@@ -1,4 +1,4 @@
-#include "./solution.cpp"
+#include "./solution2.cpp"
 int main(){
     int s[] = {1,2,3,4};
     vector<int> S(s, s+sizeof(s)/sizeof(s[0]));
