@@ -3,24 +3,26 @@ class Solution {
 public:
     vector<vector<int> > generate(int numRows) {
         vector<vector<int> > all_solutions;
-        if( numRows == 0)
+        if(numRows == 0){
             return all_solutions;
-        else{
-            vector<int> first;
-            first.push_back(1);
-            all_solutions.push_back(first);
+        }else if(numRows >= 1){
+            vector<int> solution;
+            solution.push_back(1);
+            all_solutions.push_back(solution);
         }
-        for(int i=0; i<numRows; i++){
-            int last_idx = max((int)all_solutions.size()-1, 0);
-            vector<int> last_solution = all_solutions[last_idx];
-            int last_len = last_solution.size();
-            vector<int> new_solution;
-            for(int j=0; j<last_len; j++){
-                int new_ele = last_solution[j] + (j>0 ? last_solution[j-1] : 0);
-                new_solution.push_back(new_ele);
+        if(numRows == 1)
+            return all_solutions;
+
+        for(int i=1; i<numRows; i++){
+            vector<int> solution;
+            solution.push_back(1);
+            vector<int> &last_solution = all_solutions[all_solutions.size()-1];
+            int last_length = last_solution.size();
+            for(int j=0; j<last_length; j++){
+                int new_ele = last_solution[j] + ((j+1 < last_length) ? last_solution[j+1] : 0);
+                solution.push_back(new_ele);
             }
-            new_solution.push_back(1);
-            all_solutions.push_back(new_solution);
+            all_solutions.push_back(solution);
         }
         return all_solutions;
     }
