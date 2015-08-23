@@ -8,6 +8,8 @@
 #include<stdlib.h>
 #include<limits>
 #include<cmath>
+#include<list>
+#include<utility>
 using namespace std;
 
 struct RandomListNode {
