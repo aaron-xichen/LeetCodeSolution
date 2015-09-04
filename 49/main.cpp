@@ -1,12 +1,17 @@
 #include "./solution2.cpp"
 int main(){
-    Solution sl = Solution();
-    string num[] = {"aa", "aa", "aa"};
-    vector<string> nums(num, num + sizeof(num) / sizeof(num[0]));
-    string  s = "aaaaaaaa";
+    // string v[] = {"ef", "ass", "abz", "z", "aa"};
+    string v[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    // string v[] = {""};
+    vector<string> vs(v, v + sizeof(v) / sizeof(v[0]));
 
-    vector<int> r = sl.findSubstring(s, nums);
-    for(int i=0; i<(int)r.size(); i++){
-        cout<<r[i]<<" ";
+    Solution sl = Solution();
+    vector<vector<string> > ans =  sl.groupAnagrams(vs);
+    for(int i=0; i<(int)ans.size(); i++){
+        for(int j=0; j<(int)ans[i].size(); j++){
+            cout<<ans[i][j]<<", ";
+        }
+        cout<<endl;
     }
+
 }
