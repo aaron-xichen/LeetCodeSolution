@@ -331,3 +331,6 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 	- `sum = (n1 * n2 + carray  + ans[k]) 10`
 	- `ans[k] = sum % 10` 
 	-  `carry = sum / 10`
+
+- **Validate Binary Search Tree (98)**
+	- 这题要求验证一个给定的二叉搜索树是否合法，最直接的思路就是递归对左右两个分支进行检查，注意这个时候需要引入最小和最大值变量；第二种思路就是直接中序遍历，看看是否是单调递增的序列
