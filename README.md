@@ -352,3 +352,6 @@ $$Area(j) = height(j)*(right(j) - left(j) - 1)$$
 
 - **Ugly Number II(264)**
 	- 这题要求返回第$n$个ugly number，其中ugly number就是素因子只有$2, 3$或者$5$。方法就是用动态规划的方法，用三个指针记录当前三个因子分别指代的位置，$ptr2$, $ptr3$和$ptr5$，下一个数字由$min(trace[ptr2]*2, trace[ptr3]*3, trace[ptr5]*5)$生成，然后把相应的指针右移。
+
+- **Number of Digit One(233)**
+	- 这题比较有意思，就是给定一个整数`n`，要求计算不超过`n`的所有非负整数里面，包含数字`1`的个数。解决的方法是逐位统计，观察每一位出现`1`的规律，假设当前考虑的是`std`，则`val += (n - std + 1) / (10 * std) * std + min((n - std + 1) % (10 * std), std)`
